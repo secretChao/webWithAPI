@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<TITLE></TITLE>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</HEAD>
+<BODY>
+<div style="height: 10px;"></div>
+<div class="btnArea0 row">
+    <div class="col col-3">
+       <div class="d-flex flex-column bd-highlight mb-3">
+           <div style="height:130px"></div>
+           <div id = "PriPic" style="width: 250px;align-self: flex-end;">
+           </div>
+       </div>
+    </div>
+    <div class="col col-6">
+	    <div class="row">
+            <div class="col col-8">
+			</div>
+			<div class="col col-4">
+				<input type="button" name="DetectCard" id="DetectCard" value="偵測卡片" class="btn btn-outline-primary">		
+			</div>
+		</div>
+		
+		<div class="row">
+            <div class="col col-8">
+		        <div class="input-group mb-3">
+		            <div class="input-group-prepend">
+		                <span class="input-group-text" id="basic-addon1">PIN1</span>
+		            </div>
+		            <input type="password" id="pin1" class="form-control" placeholder="請輸入PIN1" aria-label="請輸入PIN1" aria-describedby="basic-addon1">
+		            
+			</div>
+			<div class="col col-4">
+	            <button type="button" id="getDataBtn" class="btn btn-outline-primary">取得資料</button>
+			</div>
+	    </div>
+		<div id="result" class="row" style="display:none;">
+	        <div class="form-row">
+		        <div class="form-group col col-md-4"> 
+	                <label for="name">中文姓名</label>
+	                <input type="text" class="form-control" id="name">
+	            </div>
+		        <div class="form-group col col-md-4"> 
+	                <label for="nameRoman">姓名羅馬拼音</label>
+	                <input type="text" class="form-control" id="nameRoman">
+	            </div>
+		        <div class="form-group col col-md-4"> 
+	                <label for="nameForeign">外文姓名</label>
+	                <input type="text" class="form-control" id="nameForeign">
+	            </div>
+	        </div>
+	        <div class="form-row">
+		        <div class="form-group col col-md-4"> 
+	                <label for="rocID">統一編號</label>
+	                <input type="text" class="form-control" id="rocID">
+	            </div>
+		        <div class="form-group col col-md-4"> 
+	                <label for="birthday">出生日期(西元)</label>
+	                <input type="text" class="form-control" id="birthday">
+	            </div>
+		        <div class="form-group col col-md-4"> 
+	                <label for="sex">性別</label>
+	                <input type="text" class="form-control" id="sex">
+	            </div>
+	        </div>
+	        <div class="form-row">
+		        <div class="form-group col col-md-4"> 
+	                <label for="birthPlaceCode">出生地代碼</label>
+	                <input type="text" class="form-control" id="birthPlaceCode">
+	            </div>
+		        <div class="form-group col col-md-8"> 
+	                <label for="birthPlace">出生地</label>
+	                <input type="text" class="form-control" id="birthPlace">
+	            </div>
+	        </div>
+	        <div class="form-row">
+                <div class="form-group col col-md-12"> 
+                    <label for="residenceAddress">戶籍地址</label>
+                    <input type="text" class="form-control" id="residenceAddress">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col col-md-4"> 
+                    <label for="residenceAddress1">戶籍地址(到村里)</label>
+                    <input type="text" class="form-control" id="residenceAddress1">
+                </div>
+                <div class="form-group col col-md-4"> 
+                    <label for="residenceAddress2">戶籍地址(鄰)</label>
+                    <input type="text" class="form-control" id="residenceAddress2">
+                </div>
+                <div class="form-group col col-md-4"> 
+                    <label for="residenceAddress3">戶籍地址(到村里鄰）</label>
+                    <input type="text" class="form-control" id="residenceAddress3">
+                </div>
+            </div>
+	        <div class="form-row">
+		        <div class="form-group col col-md-4"> 
+	                <label for="marriageStatus">結婚狀態</label>
+	                <input type="text" class="form-control" id="marriageStatus">
+	            </div>
+		        <div class="form-group col col-md-4"> 
+	                <label for="spouseName">配偶姓名</label>
+	                <input type="text" class="form-control" id="spouseName">
+	            </div>
+		        <div class="form-group col col-md-4"> 
+	                <label for="spouseNameRoman">配偶姓名羅馬拼音</label>
+	                <input type="text" class="form-control" id="spouseNameRoman">
+	            </div>
+	        </div>
+	        <div class="form-row">
+	            <div class="form-group col col-md-4"> 
+                    <label for="dadNameField">父欄位名</label>
+                    <input type="text" class="form-control" id="dadNameField">
+                </div>
+                <div class="form-group col col-md-4"> 
+                    <label for="dadName">父姓名</label>
+                    <input type="text" class="form-control" id="dadName">
+                </div>
+                <div class="form-group col col-md-4"> 
+                    <label for="dadNameRoman">父姓名羅馬拼音</label>
+                    <input type="text" class="form-control" id="dadNameRoman">
+                </div>
+	        </div>
+	        <div class="form-row">
+	            <div class="form-group col col-md-4"> 
+                    <label for="momNameField">母欄位名</label>
+                    <input type="text" class="form-control" id="momNameField">
+                </div>
+                <div class="form-group col col-md-4"> 
+                    <label for="momName">母姓名</label>
+                    <input type="text" class="form-control" id="momName">
+                </div>
+                <div class="form-group col col-md-4"> 
+                    <label for="momNameRoman">母姓名羅馬拼音</label>
+                    <input type="text" class="form-control" id="momNameRoman">
+                </div>
+	        </div>
+	        <div class="form-row">
+	            <div class="form-group col col-md-4"> 
+                    <label for="militaryService">役別</label>
+                    <input type="text" class="form-control" id="militaryService">
+                </div>
+		        <div class="form-group col col-md-4"> 
+	                <label for="cardNum">證件號碼</label>
+	                <input type="text" class="form-control" id="cardNum">
+	            </div>
+		        <div class="form-group col col-md-4"> 
+	                <label for="can">證件號碼後六碼</label>
+	                <input type="text" class="form-control" id="can">
+	            </div>
+	        </div>
+	        <div class="form-row">
+		        <div class="form-group col col-md-4"> 
+	                <label for="manufactureDate">製證日期(西元)</label>
+	                <input type="text" class="form-control" id="manufactureDate">
+	            </div>
+		        <div class="form-group col col-md-4"> 
+	                <label for="renewalDate">應換領日期(西元)</label>
+	                <input type="text" class="form-control" id="renewalDate">
+	            </div>
+		        <div class="form-group col col-md-4"> 
+	                <label for="certificationInfo">驗證資訊</label>
+	                <input type="text" class="form-control" id="certificationInfo">
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="col col-3">
+
+	</div>
+</div>
+</BODY>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+<script>
+
+	
+	// base64 decode
+	function b64DecodeUnicode(str) {
+		return decodeURIComponent(atob(str).split('').map(function(c) {
+			return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+		}).join(''));
+	}
+
+	var getCertData = function (){
+		
+			$.get({
+				url: 'http://loclhost:8080/getCert',
+				success: function(resp){
+				console.log(resp);
+				$('#ATCert').val(resp['b64TACert']);
+				$('#DVCert').val(resp['b64DVCert']);
+					console.log(ATCert);
+					console.log(DVCert);
+				},
+				error: function(){
+					console.log('ajax error');
+				}
+			});
+
+	}
+	
+	var doClear = function(){
+		$('#result').find('input').val('');
+		$('#PriPic').empty();
+	}
+	
+	// getDataBtn
+	$('#getDataBtn').click(function(){
+		doClear();
+
+ 	});
+
+	
+	// 從API取得簽署憑證資料
+	var getSignedData = function(){
+		$.post({
+			url: 'http://loclhost:8080/doSign',
+			data: {
+				dtbsB64 : $('#ResultChallenge').val()
+			},
+			success: function(resp){
+				console.log(resp);
+				console.log('getSignedData success');
+				$('#SignedData').val(resp['sigB64']);
+				GetEIDPrivateDataStep2_onclick();
+			},
+			error: function(){
+				alert('ajax error');
+			}
+		});
+	}
+	
+
+	
+	initHTML(); //初始化
+	getCertData();
+	
+	
+	
+</script>
+
+</HTML>
